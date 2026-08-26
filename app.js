@@ -69,10 +69,18 @@ function validateTasks(tasks) {
 
 function applySiteConfig() {
   const site = state.data.site || {};
-  document.title = site.title || '流行歌唱社｜社博任務轉盤';
+  document.title = site.title || '流行歌唱社｜迎新任務轉盤';
   if (site.headline) {
     const parts = String(site.headline).split('\n');
-    els.siteTitle.innerHTML = `${escapeHtml(parts[0] || '')}${parts[1] ? `<br><span>${escapeHtml(parts.slice(1).join(' '))}</span>` : ''}`;
+    const firstLine = parts[0] || '';
+    const secondLine = parts.slice(1).join(' ');
+
+    els.siteTitle.innerHTML = [
+      `<span class="hero-title-line" data-text="${escapeAttr(firstLine)}">${escapeHtml(firstLine)}</span>`,
+      secondLine
+        ? `<span class="hero-title-line hero-title-subline" data-text="${escapeAttr(secondLine)}">${escapeHtml(secondLine)}</span>`
+        : ''
+    ].join('');
   }
   els.siteSubtitle.textContent = site.subtitle || '';
   els.rewardText.textContent = site.rewardText || '';

@@ -75,25 +75,64 @@ button { -webkit-tap-highlight-color: transparent; }
 }
 .eyebrow { color: var(--cream); font-size: clamp(.78rem, 1.8vw, 1rem); }
 .hero h1 {
+  position: relative;
   margin: 0;
   color: var(--yellow);
-  font-family: "Noto Sans TC", "Baloo 2", system-ui, sans-serif;
+  font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: clamp(3rem, 8vw, 6.7rem);
   font-weight: 900;
-  line-height: 1;
+  line-height: .94;
   letter-spacing: .01em;
+  text-align: center;
 
-  /* 先畫外框、再畫黃色文字，避免深藍色吃進中文字內部 */
-  -webkit-text-stroke: 2px var(--navy);
-  paint-order: stroke fill;
-
-  /* 用整體陰影取代多層文字陰影，避免字與字重疊時出現藍色方塊 */
-  text-shadow: none;
-  filter: drop-shadow(4px 5px 0 var(--navy));
-
-  transform: rotate(-1deg);
+  /* 重要：標題本體完全不使用 text-stroke / filter / transform。
+     Chrome 在大尺寸中文字 + stroke/transform 時可能產生藍色方塊狀渲染瑕疵。 */
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
+  text-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
 }
-.hero h1 span { font-size: .76em; }
+
+.hero-title-line {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  color: var(--yellow);
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+/* 深藍外框畫在「另一層文字」上，黃色正文字永遠蓋在最上面。
+   因此深藍不會再侵入黃色筆畫。 */
+.hero-title-line::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: var(--navy);
+  -webkit-text-stroke: 0;
+  text-shadow:
+    -3px -3px 0 var(--navy),
+     0   -3px 0 var(--navy),
+     3px -3px 0 var(--navy),
+    -3px  0   0 var(--navy),
+     3px  0   0 var(--navy),
+    -3px  3px 0 var(--navy),
+     0    3px 0 var(--navy),
+     3px  3px 0 var(--navy),
+     5px  6px 0 var(--navy);
+  pointer-events: none;
+}
+
+.hero-title-subline {
+  margin-top: .08em;
+  font-size: .76em;
+}
 .subtitle {
   max-width: 620px;
   margin: 24px auto 0;
@@ -434,9 +473,9 @@ button { -webkit-tap-highlight-color: transparent; }
   .hero { min-height: 270px; margin-top: 14px; }
   .hero-copy { padding: 42px 28px; }
   .hero h1 {
-    -webkit-text-stroke-width: 1.5px;
-    text-shadow: none;
-    filter: drop-shadow(3px 4px 0 var(--navy));
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
+    filter: none !important;
   }
   .hero-doodle .mini-mic { transform: rotate(-17deg) scale(.75); left: 2%; }
   .main-grid { grid-template-columns: 1fr; }
@@ -453,7 +492,7 @@ button { -webkit-tap-highlight-color: transparent; }
   .hero-copy { padding: 44px 18px; }
   .hero h1 {
     font-size: clamp(2.65rem, 16vw, 4.2rem);
-    line-height: 1.02;
+    line-height: .98;
     letter-spacing: .005em;
   }
   .subtitle { margin-top: 18px; border-width: 3px; border-radius: 18px; font-size: .82rem; }
@@ -484,4 +523,20 @@ button { -webkit-tap-highlight-color: transparent; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
+
+@media (max-width: 620px) {
+  .hero-title-line::before {
+    text-shadow:
+      -2px -2px 0 var(--navy),
+       0   -2px 0 var(--navy),
+       2px -2px 0 var(--navy),
+      -2px  0   0 var(--navy),
+       2px  0   0 var(--navy),
+      -2px  2px 0 var(--navy),
+       0    2px 0 var(--navy),
+       2px  2px 0 var(--navy),
+       4px  4px 0 var(--navy);
+  }
 }
