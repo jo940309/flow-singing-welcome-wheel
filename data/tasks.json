@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "流行歌唱社｜迎新任務轉盤",
-    "headline": "流行歌唱社\n迎新任務轉盤",
+    "title": "流行歌唱社｜社博任務轉盤",
+    "headline": "流行歌唱社\n社博任務轉盤",
     "subtitle": "轉到什麼就挑戰什麼，完成任務再去填入社單！",
     "rewardText": "完成任務＋填寫入社單，可獲得小禮物／社費優惠（依現場規則發放）。",
     "completeMessage": "請找工作人員確認，接著填寫入社單領取活動獎勵。",
@@ -89,9 +89,21 @@
       "badge": "GUESS",
       "description": "播放一段前奏，猜出歌名。答不出來可以請朋友救援一次。",
       "items": [
-        { "title": "示範音檔 A", "artist": "請替換成歌手", "audio": "assets/audio/demo_intro_01.wav" },
-        { "title": "示範音檔 B", "artist": "請替換成歌手", "audio": "assets/audio/demo_intro_02.wav" },
-        { "title": "示範音檔 C", "artist": "請替換成歌手", "audio": "assets/audio/demo_intro_03.wav" }
+        {
+          "title": "示範音檔 A",
+          "artist": "請替換成歌手",
+          "audio": "assets/audio/demo_intro_01.wav"
+        },
+        {
+          "title": "示範音檔 B",
+          "artist": "請替換成歌手",
+          "audio": "assets/audio/demo_intro_02.wav"
+        },
+        {
+          "title": "示範音檔 C",
+          "artist": "請替換成歌手",
+          "audio": "assets/audio/demo_intro_03.wav"
+        }
       ]
     },
     {
@@ -120,9 +132,21 @@
       "badge": "POSE",
       "description": "抽一張專輯封面，用表情、姿勢或構圖模仿它。讓工作人員拍下來就完成！",
       "items": [
-        { "title": "示範封面 A", "artist": "請替換", "image": "assets/covers/demo_cover_01.svg" },
-        { "title": "示範封面 B", "artist": "請替換", "image": "assets/covers/demo_cover_02.svg" },
-        { "title": "示範封面 C", "artist": "請替換", "image": "assets/covers/demo_cover_03.svg" }
+        {
+          "title": "示範封面 A",
+          "artist": "請替換",
+          "image": "assets/covers/demo_cover_01.svg"
+        },
+        {
+          "title": "示範封面 B",
+          "artist": "請替換",
+          "image": "assets/covers/demo_cover_02.svg"
+        },
+        {
+          "title": "示範封面 C",
+          "artist": "請替換",
+          "image": "assets/covers/demo_cover_03.svg"
+        }
       ]
     }
   ]

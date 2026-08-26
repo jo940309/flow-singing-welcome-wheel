@@ -69,7 +69,7 @@ function validateTasks(tasks) {
 
 function applySiteConfig() {
   const site = state.data.site || {};
-  document.title = site.title || '流行歌唱社｜迎新任務轉盤';
+  document.title = site.title || '流行歌唱社｜社博任務轉盤';
   if (site.headline) {
     const parts = String(site.headline).split('\n');
     els.siteTitle.innerHTML = `${escapeHtml(parts[0] || '')}${parts[1] ? `<br><span>${escapeHtml(parts.slice(1).join(' '))}</span>` : ''}`;
