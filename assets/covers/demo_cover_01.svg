@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#ff4a16"/>
+  <circle cx="400" cy="390" r="245" fill="#ffc52b" stroke="#0b2e59" stroke-width="28"/>
+  <path d="M235 425 Q400 175 565 425 Q470 590 400 610 Q330 590 235 425Z" fill="#fff0c7" stroke="#0b2e59" stroke-width="24"/>
+  <circle cx="335" cy="380" r="24" fill="#0b2e59"/><circle cx="465" cy="380" r="24" fill="#0b2e59"/>
+  <path d="M330 485 Q400 535 470 485" fill="none" stroke="#0b2e59" stroke-width="20" stroke-linecap="round"/>
+  <text x="55" y="90" font-family="sans-serif" font-weight="900" font-size="58" fill="#fff0c7">DEMO COVER 01</text>
+  <text x="400" y="740" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="42" fill="#0b2e59">模仿表情與構圖</text>
+</svg>

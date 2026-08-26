@@ -1,0 +1,129 @@
+{
+  "site": {
+    "title": "流行歌唱社｜迎新任務轉盤",
+    "headline": "流行歌唱社\n迎新任務轉盤",
+    "subtitle": "轉到什麼就挑戰什麼，完成任務再去填入社單！",
+    "rewardText": "完成任務＋填寫入社單，可獲得小禮物／社費優惠（依現場規則發放）。",
+    "completeMessage": "請找工作人員確認，接著填寫入社單領取活動獎勵。",
+    "membershipFormUrl": ""
+  },
+  "tasks": [
+    {
+      "id": "sing-5",
+      "label": "清唱 5 秒",
+      "shortLabel": "清唱\n5秒",
+      "probability": 20,
+      "type": "songSuggestions",
+      "badge": "5 SEC",
+      "description": "不用麥克風，挑一首你會的歌，清唱至少 5 秒就完成！",
+      "suggestionCount": 3,
+      "items": [
+        { "title": "想見你想見你想見你", "artist": "八三夭" },
+        { "title": "小幸運", "artist": "田馥甄" },
+        { "title": "刻在我心底的名字", "artist": "盧廣仲" },
+        { "title": "如果可以", "artist": "韋禮安" },
+        { "title": "愛你", "artist": "王心凌" },
+        { "title": "告白氣球", "artist": "周杰倫" }
+      ]
+    },
+    {
+      "id": "sing-10",
+      "label": "清唱 10 秒",
+      "shortLabel": "清唱\n10秒",
+      "probability": 13,
+      "type": "songSuggestions",
+      "badge": "10 SEC",
+      "description": "挑一首歌清唱至少 10 秒。可以唱副歌，也可以唱你最熟的段落。",
+      "suggestionCount": 3,
+      "items": [
+        { "title": "擱淺", "artist": "周杰倫" },
+        { "title": "永不失聯的愛", "artist": "周興哲" },
+        { "title": "我懷念的", "artist": "孫燕姿" },
+        { "title": "你，好不好？", "artist": "周興哲" },
+        { "title": "雨愛", "artist": "楊丞琳" },
+        { "title": "如果雨之後", "artist": "周興哲" }
+      ]
+    },
+    {
+      "id": "mic-song",
+      "label": "拿麥克風唱一首歌",
+      "shortLabel": "麥克風\n唱一首",
+      "probability": 7,
+      "type": "songSuggestions",
+      "badge": "MIC",
+      "description": "拿起麥克風完成一小段歌曲。現場可依人潮決定唱主歌、副歌或一整段。",
+      "suggestionCount": 4,
+      "items": [
+        { "title": "愛錯", "artist": "王力宏" },
+        { "title": "帶我走", "artist": "楊丞琳" },
+        { "title": "說好的幸福呢", "artist": "周杰倫" },
+        { "title": "天黑請閉眼", "artist": "陳零九、邱鋒澤" },
+        { "title": "我很好騙", "artist": "動力火車" },
+        { "title": "陪你很久很久", "artist": "小球（莊鵑瑛）" }
+      ]
+    },
+    {
+      "id": "duet",
+      "label": "找人一起合唱",
+      "shortLabel": "找人\n合唱",
+      "probability": 10,
+      "type": "songSuggestions",
+      "badge": "DUET",
+      "description": "找一位工作人員或朋友一起合唱。兩個人都有唱到就算完成！",
+      "suggestionCount": 4,
+      "items": [
+        { "title": "屋頂", "artist": "吳宗憲、溫嵐" },
+        { "title": "珊瑚海", "artist": "周杰倫、Lara" },
+        { "title": "製造浪漫", "artist": "陳慧琳、鄭中基" },
+        { "title": "私奔到月球", "artist": "五月天、陳綺貞" },
+        { "title": "小酒窩", "artist": "林俊傑、蔡卓妍" },
+        { "title": "不得不愛", "artist": "潘瑋柏、弦子" }
+      ]
+    },
+    {
+      "id": "guess-intro",
+      "label": "聽前奏猜歌",
+      "shortLabel": "前奏\n猜歌",
+      "probability": 20,
+      "type": "introGuess",
+      "badge": "GUESS",
+      "description": "播放一段前奏，猜出歌名。答不出來可以請朋友救援一次。",
+      "items": [
+        { "title": "示範音檔 A", "artist": "請替換成歌手", "audio": "assets/audio/demo_intro_01.wav" },
+        { "title": "示範音檔 B", "artist": "請替換成歌手", "audio": "assets/audio/demo_intro_02.wav" },
+        { "title": "示範音檔 C", "artist": "請替換成歌手", "audio": "assets/audio/demo_intro_03.wav" }
+      ]
+    },
+    {
+      "id": "song-chain",
+      "label": "接歌",
+      "shortLabel": "接歌",
+      "probability": 20,
+      "type": "prompt",
+      "badge": "CHAIN",
+      "description": "抽一個關鍵字，在 10 秒內唱出含有這個字的歌曲。",
+      "items": [
+        { "prompt": "愛", "hint": "唱出歌詞中有「愛」的歌" },
+        { "prompt": "想", "hint": "唱出歌詞中有「想」的歌" },
+        { "prompt": "你", "hint": "唱出歌詞中有「你」的歌" },
+        { "prompt": "夢", "hint": "唱出歌詞中有「夢」的歌" },
+        { "prompt": "夜", "hint": "唱出歌詞中有「夜」的歌" },
+        { "prompt": "心", "hint": "唱出歌詞中有「心」的歌" }
+      ]
+    },
+    {
+      "id": "album-cover",
+      "label": "模仿專輯封面",
+      "shortLabel": "模仿\n封面",
+      "probability": 10,
+      "type": "albumCover",
+      "badge": "POSE",
+      "description": "抽一張專輯封面，用表情、姿勢或構圖模仿它。讓工作人員拍下來就完成！",
+      "items": [
+        { "title": "示範封面 A", "artist": "請替換", "image": "assets/covers/demo_cover_01.svg" },
+        { "title": "示範封面 B", "artist": "請替換", "image": "assets/covers/demo_cover_02.svg" },
+        { "title": "示範封面 C", "artist": "請替換", "image": "assets/covers/demo_cover_03.svg" }
+      ]
+    }
+  ]
+}

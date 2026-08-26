@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff4a16" />
+  <meta name="description" content="流行歌唱社迎新轉盤任務遊戲" />
+  <title>流行歌唱社｜迎新任務轉盤</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="checker-bg" aria-hidden="true"></div>
+
+  <header class="hero shell">
+    <div class="hero-burst" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">THE KNIGHTS · POP SINGING CLUB</p>
+      <h1 id="site-title">流行歌唱社<br><span>迎新任務轉盤</span></h1>
+      <p id="site-subtitle" class="subtitle">轉到什麼就挑戰什麼，完成任務再去填入社單！</p>
+    </div>
+    <div class="hero-doodle" aria-hidden="true">
+      <div class="spark spark-a">✦</div>
+      <div class="spark spark-b">✧</div>
+      <div class="music-note">♫</div>
+      <div class="mini-mic">●</div>
+    </div>
+  </header>
+
+  <main class="shell main-grid">
+    <section class="panel wheel-panel" aria-labelledby="wheel-title">
+      <div class="panel-heading">
+        <div>
+          <p class="kicker">STEP 01</p>
+          <h2 id="wheel-title">轉轉盤抽任務</h2>
+        </div>
+        <span class="chip" id="probability-note">依難度分配機率</span>
+      </div>
+
+      <div class="wheel-stage">
+        <div class="pointer" aria-hidden="true"></div>
+        <div class="wheel-ring">
+          <canvas id="wheel" width="720" height="720" aria-label="任務轉盤"></canvas>
+          <button id="spin-button" class="spin-button" type="button">
+            <span>SPIN</span>
+            <small>開始</small>
+          </button>
+        </div>
+      </div>
+
+      <div class="result-card" id="result-card" hidden>
+        <p class="result-label">你抽到的是</p>
+        <h3 id="result-title">—</h3>
+        <p id="result-description">—</p>
+        <div class="result-actions">
+          <button id="task-button" class="btn btn-primary" type="button">進入執行任務</button>
+          <button id="reroll-button" class="btn btn-ghost" type="button">重新抽一次</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel rules-panel" aria-labelledby="rules-title">
+      <div class="panel-heading compact">
+        <div>
+          <p class="kicker">HOW TO PLAY</p>
+          <h2 id="rules-title">玩法</h2>
+        </div>
+      </div>
+      <ol class="steps">
+        <li><span>1</span><p>按下中央 <strong>SPIN</strong> 抽出你的迎新任務。</p></li>
+        <li><span>2</span><p>點「進入執行任務」，依畫面提示完成挑戰。</p></li>
+        <li><span>3</span><p>完成後請工作人員確認，再填寫入社單。</p></li>
+        <li><span>4</span><p id="reward-text">完成任務＋入社可獲得小禮物或社費優惠。</p></li>
+      </ol>
+
+      <div class="probability-box">
+        <p class="box-title">本次機率</p>
+        <div id="probability-list" class="probability-list"></div>
+      </div>
+
+      <button id="join-button" class="btn btn-secondary btn-full" type="button">填寫入社單</button>
+      <p id="join-hint" class="microcopy">入社單連結可在 data/tasks.json 修改。</p>
+    </aside>
+  </main>
+
+  <section class="shell task-section" id="task-section" hidden aria-labelledby="task-section-title">
+    <div class="panel task-panel">
+      <div class="panel-heading task-heading">
+        <div>
+          <p class="kicker">STEP 02 · CHALLENGE</p>
+          <h2 id="task-section-title">執行任務</h2>
+        </div>
+        <button id="close-task" class="icon-button" type="button" aria-label="關閉任務">×</button>
+      </div>
+      <div id="task-content" class="task-content"></div>
+      <div class="task-footer">
+        <button id="complete-button" class="btn btn-primary" type="button">我完成任務了！</button>
+        <p>完成後請讓現場工作人員確認。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="shell reward-banner" id="reward-banner" hidden>
+    <div>
+      <p class="kicker">MISSION COMPLETE!</p>
+      <h2>任務完成 🎉</h2>
+      <p id="complete-message">請找工作人員確認，接著填寫入社單領取活動獎勵。</p>
+    </div>
+    <button id="complete-join-button" class="btn btn-secondary" type="button">前往填寫入社單</button>
+  </section>
+
+  <footer class="shell footer">
+    <p>流行歌唱社 · 迎新任務轉盤</p>
+    <p class="footer-edit">任務、歌名、音檔、封面都可直接從資料夾與 JSON 更換。</p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
