@@ -5,9 +5,11 @@
 ## 你最常需要改的地方
 
 ### 1. 改任務、機率、歌名
+
 編輯：`data/tasks.json`
 
 每個任務都有：
+
 - `label`：完整名稱
 - `shortLabel`：轉盤上的短名稱，`\n` 代表換行
 - `probability`：抽中機率／權重
@@ -18,6 +20,7 @@
 程式其實會自動依總權重計算，所以之後就算沒有剛好加到 100 也能正常抽，只是畫面顯示的 `%` 會照你填的數字。
 
 ### 2. 加入「聽前奏猜歌」音檔
+
 把你有權使用的音檔放到：
 `assets/audio/`
 
@@ -34,6 +37,7 @@
 建議使用 `.mp3`、`.wav`、`.m4a` 等瀏覽器常見格式。檔名盡量使用英文、數字、底線，避免空白與特殊符號。
 
 ### 3. 加入「模仿專輯封面」圖片
+
 把圖片放到：
 `assets/covers/`
 
@@ -50,6 +54,7 @@
 建議使用正方形 JPG / PNG / WebP。
 
 ### 4. 設定入社單連結
+
 在 `data/tasks.json` 最上方找到：
 
 ```json
@@ -78,6 +83,7 @@ python -m http.server 8000
 ## 如何變成「一個連結直接玩」
 
 ### 方法 A：GitHub Pages
+
 1. 建立 GitHub repository。
 2. 把本資料夾內所有檔案上傳到 repository 根目錄。
 3. GitHub → Settings → Pages。
@@ -85,6 +91,7 @@ python -m http.server 8000
 5. 等待部署完成後會得到公開網址。
 
 ### 方法 B：Netlify
+
 1. 登入 Netlify。
 2. 建立新的 Static site。
 3. 上傳整個專案資料夾或連接 GitHub repository。
@@ -116,3 +123,17 @@ flow_singing_wheel_game/
 - 如果怕參加者一直重新抽，可以由工作人員操作「SPIN」；目前仍保留「重新抽一次」按鈕，方便活動現場彈性使用。
 - 如果你不想允許重抽，可以直接在 `index.html` 刪掉 `id="reroll-button"` 那顆按鈕，或在 CSS 加 `#reroll-button { display:none; }`。
 - 前奏音檔建議只放短片段，頁面載入會更快。
+
+## 網站網址：
+
+https://jo940309.github.io/flow-singing-welcome-wheel/
+
+你現在可以直接用瀏覽器打開這個網址測試。
+
+之後你在本機修改遊戲，只要：
+
+git add .
+git commit -m "Update game"
+git push origin main
+
+GitHub Pages 就會自動重新部署，不需要重新設定 Pages。
