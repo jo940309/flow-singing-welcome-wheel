@@ -146,8 +146,9 @@ function drawSegmentLabel(ctx, task, startAngle, segmentAngle, center, radius) {
 
   ctx.save();
   ctx.translate(x, y);
-  let rotation = mid + Math.PI / 2;
-  if (rotation > Math.PI / 2 && rotation < Math.PI * 1.5) rotation += Math.PI;
+  // 每個區塊的文字都沿著半徑排列：
+  // 文字的「下方」永遠朝向圓心，文字上方朝向轉盤外圈。
+  const rotation = mid + Math.PI / 2;
   ctx.rotate(rotation);
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
