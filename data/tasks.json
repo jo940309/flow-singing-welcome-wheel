@@ -123,8 +123,8 @@
     },
     {
       "id": "song-chain",
-      "label": "接歌",
-      "shortLabel": "接歌",
+      "label": "唱出關鍵字",
+      "shortLabel": "唱出關鍵字",
       "probability": 20,
       "type": "prompt",
       "badge": "CHAIN",
